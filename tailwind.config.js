@@ -28,9 +28,14 @@ module.exports = {
       animation: {
         fadeIn: "fadeIn 2s ease-in-out",
         slideInUp: "slideInUp 1s ease-in-out"
+      },
+      backgroundImage: {
+        banner: "url('/src/images/banner.jpg')"
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
 
