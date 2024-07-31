@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-background font-body text-gray-800 dark:bg-darkBackground dark:text-gray-200">
-    <nav class="bg-secondary p-6 dark:bg-gray-900">
+    <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button type="button"
+                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex flex-shrink-0 items-center">
+                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                            alt="Your Company">
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="#" class="rounded-md hover:bg-gray-700 px-3 py-2 text-sm font-medium text-white"
+                                aria-current="page">Home</a>
+                            <a href="#features"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Features</a>
+                            <a href="#about"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                            <a href="#contacts"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacts</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-4 ml-auto">
+                        <label class="text-sm leading-8 text-gray-300" id="switch-1-label">
+                            Switch theme
+                        </label>
+                        <div class="flex h-8 items-center">        
+                            <button id="toggler" type="button"
+                                class="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                role="switch" aria-checked="false" aria-labelledby="switch-1-label">
+                                <span class="sr-only">Agree to policies</span>
+                                <span id="toggle-dot" aria-hidden="true"
+                                    class="h-4 w-4 translate-x-0 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sm:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                    aria-current="page">Home</a>
+                <a href="#features"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Features</a>
+                <a href="#about"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="#contacts"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacts</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <nav class="bg-secondary p-6 dark:bg-gray-900">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-lg font-heading font-bold text-primary">Logo</a>
             <div class="flex">
@@ -16,14 +87,31 @@
                 <a href="#about" class="mr-4 text-white hover:text-gray-300">About</a>
                 <a href="#contacts" class="text-white hover:text-gray-300">Contacts</a>
             </div>
+            <div class="flex gap-x-4 sm:col-span-2">
+                <label class="text-sm leading-6 text-gray-600" id="switch-1-label">
+                    Switch theme
+                </label>
+                <div class="flex h-6 items-center">        
+                    <button id="toggler" type="button"
+                        class="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        role="switch" aria-checked="false" aria-labelledby="switch-1-label">
+                        <span class="sr-only">Agree to policies</span>
+                        <span id="toggle-dot" aria-hidden="true"
+                            class="h-4 w-4 translate-x-0 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
+                    </button>
+                </div>
+            </div>
         </div>
-    </nav>
+    </nav> -->
 
     <header class="bg-banner bg-center bg-cover py-20 text-center text-white">
         <div class="container mx-auto animate-fadeIn">
             <h1 class="text-5xl font-heading font-bold mb-4">Welcome to Our Website!</h1>
-            <p class="text-xl mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sunt harum, veniam provident facilis natus vero deserunt exercitationem dolor quis quos cupiditate expedita?</p>
-            <a href="#" class="mt-4 inline-block bg-accent hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded">Get started</a>
+            <p class="text-xl mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sunt harum, veniam
+                provident facilis natus vero deserunt exercitationem dolor quis quos cupiditate expedita?</p>
+            <a href="#"
+                class="mt-4 inline-block bg-accent hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded">Get
+                started</a>
         </div>
     </header>
 
@@ -34,42 +122,48 @@
                     <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                         <img src="images/work1.jpg" alt="feature1" class="w-full rounded-lg">
                         <h2 class="text-xl font-heading font-bold my-2">Feature #1</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ex sunt mollitia! Minus.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Sit ex sunt mollitia! Minus.</p>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3 px-4 mb-8 animate-slideInUp">
                     <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                         <img src="images/work2.jpg" alt="feature2" class="w-full rounded-lg">
                         <h2 class="text-xl font-heading font-bold my-2">Feature #2</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ex sunt mollitia! Minus.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Sit ex sunt mollitia! Minus.</p>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3 px-4 mb-8 animate-slideInUp">
                     <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                         <img src="images/work3.jpg" alt="feature3" class="w-full rounded-lg">
                         <h2 class="text-xl font-heading font-bold my-2">Feature #3</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ex sunt mollitia! Minus.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Sit ex sunt mollitia! Minus.</p>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3 px-4 mb-8 animate-slideInUp">
                     <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                         <img src="images/work4.jpg" alt="feature4" class="w-full rounded-lg">
                         <h2 class="text-xl font-heading font-bold my-2">Feature #4</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ex sunt mollitia! Minus.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Sit ex sunt mollitia! Minus.</p>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3 px-4 mb-8 animate-slideInUp">
                     <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                         <img src="images/work5.jpg" alt="feature5" class="w-full rounded-lg">
                         <h2 class="text-xl font-heading font-bold my-2">Feature #5</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ex sunt mollitia! Minus.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Sit ex sunt mollitia! Minus.</p>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3 px-4 mb-8 animate-slideInUp">
                     <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
                         <img src="images/work6.jpg" alt="feature6" class="w-full rounded-lg">
                         <h2 class="text-xl font-heading font-bold my-2">Feature #6</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ex sunt mollitia! Minus.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Sit ex sunt mollitia! Minus.</p>
                     </div>
                 </div>
             </div>
@@ -80,89 +174,207 @@
         <div class="container mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-heading font-bold">About Us</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit cum, ex dolores illum earum reprehenderit ipsam explicabo ratione asperiores accusamus et, exercitationem dolorem quo ad esse temporibus unde id assumenda porro modi repellendus!</p>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Fugit cum, ex dolores illum earum reprehenderit ipsam explicabo ratione asperiores accusamus
+                    et, exercitationem dolorem quo ad esse temporibus unde id assumenda porro modi repellendus!</p>
             </div>
-            <div class="flex flex-wrap mx-4">
+            <div class="flex flex-wrap mx-4 wow animate__animated animate__fadeInLeft">
                 <div class="w-full md:w-1/4 px-4 mb-8 animate-fadeIn">
                     <img src="images/work1.jpg" alt="about image" class="w-full rounded-lg shadow-lg">
                 </div>
                 <div class="w-full md:w-3/4 px-4 mb-8 flex items-center animate-fadeIn">
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem? Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae
+                        molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem?
+                        Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
                 </div>
             </div>
-            <div class="flex flex-wrap mx-4">
+            <div class="flex flex-wrap mx-4 wow animate__animated animate__fadeInLeft">
                 <div class="w-full md:order-last order-first md:w-1/4 px-4 mb-8 animate-fadeIn">
                     <img src="images/work2.jpg" alt="about image" class="w-full rounded-lg shadow-lg">
                 </div>
                 <div class="w-full md:w-3/4 px-4 mb-8 flex items-center animate-fadeIn">
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem? Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae
+                        molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem?
+                        Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
                 </div>
             </div>
-            <div class="flex flex-wrap mx-4">
+            <div class="flex flex-wrap mx-4 wow animate__animated animate__fadeInLeft">
                 <div class="w-full md:w-1/4 px-4 mb-8 animate-fadeIn">
                     <img src="images/work3.jpg" alt="about image" class="w-full rounded-lg shadow-lg">
                 </div>
                 <div class="w-full md:w-3/4 px-4 mb-8 flex items-center animate-fadeIn">
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem? Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae
+                        molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem?
+                        Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
                 </div>
             </div>
-            <div class="flex flex-wrap mx-4">
+            <div class="flex flex-wrap mx-4 wow animate__animated animate__fadeInLeft">
                 <div class="w-full md:order-last order-first md:w-1/4 px-4 mb-8 animate-fadeIn">
                     <img src="images/work4.jpg" alt="about image" class="w-full rounded-lg shadow-lg">
                 </div>
                 <div class="w-full md:w-3/4 px-4 mb-8 flex items-center animate-fadeIn">
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem? Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae
+                        molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem?
+                        Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
                 </div>
             </div>
-            <div class="flex flex-wrap mx-4">
+            <div class="flex flex-wrap mx-4 wow animate__animated animate__fadeInLeft">
                 <div class="w-full md:w-1/4 px-4 mb-8 animate-fadeIn">
                     <img src="images/work5.jpg" alt="about image" class="w-full rounded-lg shadow-lg">
                 </div>
                 <div class="w-full md:w-3/4 px-4 mb-8 flex items-center animate-fadeIn">
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem? Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae
+                        molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem?
+                        Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
                 </div>
             </div>
-            <div class="flex flex-wrap mx-4">
+            <div class="flex flex-wrap mx-4 wow animate__animated animate__fadeInLeft">
                 <div class="w-full md:order-last order-first md:w-1/4 px-4 mb-8 animate-fadeIn">
                     <img src="images/work6.jpg" alt="about image" class="w-full rounded-lg shadow-lg">
                 </div>
                 <div class="w-full md:w-3/4 px-4 mb-8 flex items-center animate-fadeIn">
-                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem? Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Officia et aliquid, aliquam ex, enim aut autem fuga ducimus natus alias beatae
+                        molestiae ab dicta incidunt officiis fugit? Reprehenderit porro magni harum exercitationem?
+                        Nesciunt amet excepturi expedita assumenda odio itaque enim molestias veniam. Porro, et.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20" id="contacts">
+    <section class="class=wow animate__animated animate__fadeInLeft py-20 px-6" id="contacts">
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-300 sm:text-4xl">Contact sales
+            </h2>
+            <p class="mt-2 text-lg leading-8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim
+                voluptate.</p>
+        </div>
+        <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                    <label for="first-name"
+                        class="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300">First
+                        name</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="last-name"
+                        class="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300">Last name</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="email"
+                        class="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300">Email</label>
+                    <div class="mt-2.5">
+                        <input type="email" name="email" id="email" autocomplete="email"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="phone-number"
+                        class="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300">Phone
+                        number</label>
+                    <div class="relative mt-2.5">
+                        <div class="absolute inset-y-0 left-0 flex items-center">
+                            <label for="country" class="sr-only">Country</label>
+                            <select id="country" name="country"
+                                class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                                <option>US</option>
+                                <option>CA</option>
+                                <option>EU</option>
+                            </select>
+                            <svg class="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400"
+                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <input type="tel" name="phone-number" id="phone-number" autocomplete="tel"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message"
+                        class="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300">Message</label>
+                    <div class="mt-2.5">
+                        <textarea name="message" id="message" rows="4"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10">
+                <button type="submit"
+                    class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send
+                    message</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- <section class="wow animate__animated animate__fadeInLeft py-20" id="contacts">
         <div class="container mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-heading font-bold">Contact Us</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita repellendus ab suscipit repellat ipsa similique nihil pariatur?</p>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Expedita repellendus ab suscipit repellat ipsa similique nihil pariatur?</p>
             </div>
             <form class="w-full max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
                 <div class="mb-4">
                     <label class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2" for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your name" class="shadow appearance-none border-gray-300 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline">
+                    <input type="text" id="name" placeholder="Your name"
+                        class="shadow appearance-none border-gray-300 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2" for="email">Email</label>
-                    <input type="email" id="email" placeholder="Your email" class="shadow appearance-none border-gray-300 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline">
+                    <label class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2"
+                        for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email"
+                        class="shadow appearance-none border-gray-300 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2" for="message">Message</label>
-                    <textarea id="message" placeholder="Your message" rows="5" class="shadow appearance-none border-gray-300 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    <label class="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2"
+                        for="message">Message</label>
+                    <textarea id="message" placeholder="Your message" rows="5"
+                        class="shadow appearance-none border-gray-300 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                 </div>
                 <div class="flex items-center">
-                    <button class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send</button>
+                    <button
+                        class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send</button>
                 </div>
             </form>
         </div>
-    </section>
+    </section> -->
 
     <footer class="bg-secondary py-6 dark:bg-gray-900">
         <div class="container mx-auto text-center">
             <p class="text-white">&copy; 2024, Web423. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+
+        const toggler = document.querySelector("#toggler");
+        const toggleDot = document.querySelector("#toggle-dot");
+        toggler.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            //toggler.classList.remove("bg-gray-200");
+            toggler.classList.toggle("bg-indigo-600");
+            //toggleDot.classList.remove("translate-x-0");
+            toggleDot.classList.toggle("translate-x-3.5");
+        })
+    </script>
 </body>
+
 </html>
